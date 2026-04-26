@@ -55,9 +55,11 @@ app.use('/api', (req, res, next) => {
 })
 
 app.use('/api', formRoutes)
+
 const server = app.listen(port, host, () => {
   console.log(`Server running on port ${port}`)
 })
+
 server.on('error', (error) => {
   if (error.code === 'EADDRINUSE') {
     console.error(`Server startup failed: port ${port} is already in use.`)
