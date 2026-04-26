@@ -1,63 +1,136 @@
-# AI Form Builder (Typeform Clone)
+# 🚀 AI Form Builder (Typeform Clone)
 
-A MERN starter for an AI-assisted form builder inspired by Typeform.
+A full-stack MERN application to create dynamic, AI-powered forms similar to Typeform.
+Users can generate forms using prompts, share them, and view responses in a dashboard.
 
-## What it includes
+---
 
-- AI prompt to form schema generation
-- Multi-step form filling experience
-- Shareable public form links
-- Response dashboard with summary stats
-- MERN structure with React frontend and Express + MongoDB backend
-- Deterministic fallback schema generation when no AI API key is configured
+## ✨ Features
 
-## Stack
+* 🧠 AI-based form generation (via Groq API)
+* 📝 Multi-step interactive form experience
+* 🔗 Shareable public form links
+* 📊 Response dashboard with analytics
+* 🔐 User authentication (login/register)
+* 📱 Fully responsive UI (mobile-friendly)
+* ⚡ Works even without AI key (fallback schema generation)
 
-- MongoDB
-- Express
-- React + Vite
-- Node.js
-- Optional AI provider via `GROQ_API_KEY`
+---
 
-## Project structure
+## 🛠 Tech Stack
 
-- `client` - React app
-- `server` - Express API
+**Frontend**
 
-## Quick start
+* React
+* Vite
+* CSS / Tailwind (if used)
 
-1. Install dependencies:
+**Backend**
 
-```bash
-npm install
+* Node.js
+* Express.js
+
+**Database**
+
+* MongoDB Atlas
+
+**AI Integration**
+
+* Groq API (optional)
+
+---
+
+## 📁 Project Structure
+
+```
+client/   → React frontend
+server/   → Express backend
 ```
 
-2. Add environment variables in `server/.env`:
+---
 
-```bash
+## ⚙️ Setup & Run Locally
+
+### 1. Clone the repository
+
+```
+git clone https://github.com/7starprajwal/formforge-ai.git
+cd formforge-ai
+```
+
+---
+
+### 2. Install dependencies
+
+```
+npm install
+cd client && npm install
+cd ../server && npm install
+```
+
+---
+
+### 3. Configure environment variables
+
+Create a file:
+
+```
+server/.env
+```
+
+Add:
+
+```
 PORT=5000
 CLIENT_URL=http://localhost:5173
-MONGODB_URI=mongodb://127.0.0.1:27017/typeform-clone
-GROQ_API_KEY=
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+GROQ_API_KEY=your_api_key
 ```
 
-3. Run the app:
+---
 
-```bash
+### 4. Run the project
+
+Start backend:
+
+```
+cd server
 npm run dev
 ```
 
-Frontend: `http://localhost:5173`
+Start frontend:
 
-Backend: `http://localhost:5000`
+```
+cd client
+npm run dev
+```
 
-## AI generation
+---
 
-If `GROQ_API_KEY` is present, the server will try to generate a schema using a chat model. If not, it falls back to a local rules-based generator so the app still works during development.
+## 🌐 Local URLs
 
-## Core flows
+* Frontend → http://localhost:5173
+* Backend → http://localhost:5000
 
-- Builder creates a form from a prompt
-- Form schema can be edited before publishing
-- Public users fill the form using a step-by-step interface
-- Responses are stored and shown in a dashboard
+---
+
+## 🚀 Future Improvements
+
+* Drag-and-drop form builder
+* Pre-built templates
+* Email notifications
+* Advanced analytics dashboard
+
+---
+
+## 👨‍💻 Author
+
+**Prajwal**
+GitHub: https://github.com/7starprajwal
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
