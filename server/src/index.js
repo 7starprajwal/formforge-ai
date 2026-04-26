@@ -9,7 +9,7 @@ dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 5000
-const host = process.env.HOST || '127.0.0.1'
+const host = '0.0.0.0'
 const configuredClientUrl = process.env.CLIENT_URL || 'http://localhost:5173'
 
 const allowedOrigins = new Set([configuredClientUrl, 'http://localhost:5173', 'http://127.0.0.1:5173'])
@@ -55,11 +55,9 @@ app.use('/api', (req, res, next) => {
 })
 
 app.use('/api', formRoutes)
-
 const server = app.listen(port, host, () => {
-  console.log(`Server running at http://${host}:${port}`)
+  console.log(`Server running on port ${port}`)
 })
-
 server.on('error', (error) => {
   if (error.code === 'EADDRINUSE') {
     console.error(`Server startup failed: port ${port} is already in use.`)
